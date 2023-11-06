@@ -1,0 +1,16 @@
+[2023-11-06T16:08:50.843+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_Processing.extract manual__2023-11-06T16:04:38.526641+00:00 [queued]>
+[2023-11-06T16:08:51.003+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_Processing.extract manual__2023-11-06T16:04:38.526641+00:00 [queued]>
+[2023-11-06T16:08:51.009+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-06T16:08:51.201+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): extract> on 2023-11-06 16:04:38.526641+00:00
+[2023-11-06T16:08:51.408+0000] {standard_task_runner.py:57} INFO - Started process 195 to run task
+[2023-11-06T16:08:51.676+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_Processing', 'extract', 'manual__2023-11-06T16:04:38.526641+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/ETL_Python.py', '--cfg-path', '/tmp/tmpehg107m6']
+[2023-11-06T16:08:51.768+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask extract
+[2023-11-06T16:08:52.436+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_Processing.extract manual__2023-11-06T16:04:38.526641+00:00 [running]> on host 07361dfe1645
+[2023-11-06T16:08:53.267+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike Lozada' AIRFLOW_CTX_DAG_ID='ETL_Processing' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-06T16:04:38.526641+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-06T16:04:38.526641+00:00'
+[2023-11-06T16:08:53.284+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-06T16:08:53.307+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cut -f1,4 -d"#" /opt/***/raw_data/web-server-access-log.txt > /opt/***/processed_data/extracted.txt']
+[2023-11-06T16:08:53.533+0000] {subprocess.py:86} INFO - Output:
+[2023-11-06T16:08:53.812+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-06T16:08:54.088+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL_Processing, task_id=extract, execution_date=20231106T160438, start_date=20231106T160850, end_date=20231106T160854
+[2023-11-06T16:08:54.573+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-06T16:08:55.414+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

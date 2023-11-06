@@ -1,0 +1,23 @@
+[2023-11-06T16:09:09.696+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_Processing.load scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-06T16:09:09.740+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_Processing.load scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-06T16:09:09.753+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-06T16:09:09.847+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load> on 2023-11-02 00:00:00+00:00
+[2023-11-06T16:09:09.944+0000] {standard_task_runner.py:57} INFO - Started process 212 to run task
+[2023-11-06T16:09:10.078+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL_Processing', 'load', 'scheduled__2023-11-02T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/ETL_Python.py', '--cfg-path', '/tmp/tmp1odghd6z']
+[2023-11-06T16:09:10.174+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask load
+[2023-11-06T16:09:10.932+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL_Processing.load scheduled__2023-11-02T00:00:00+00:00 [running]> on host 07361dfe1645
+[2023-11-06T16:09:11.642+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mike Lozada' AIRFLOW_CTX_DAG_ID='ETL_Processing' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T00:00:00+00:00'
+[2023-11-06T16:09:11.672+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-06T16:09:11.675+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'zip log.zip capitalized.txt']
+[2023-11-06T16:09:12.064+0000] {subprocess.py:86} INFO - Output:
+[2023-11-06T16:09:12.245+0000] {subprocess.py:93} INFO - /bin/bash: line 1: zip: command not found
+[2023-11-06T16:09:12.254+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-11-06T16:09:12.407+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-11-06T16:09:12.548+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL_Processing, task_id=load, execution_date=20231102T000000, start_date=20231106T160909, end_date=20231106T160912
+[2023-11-06T16:09:12.755+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task load (Bash command failed. The command returned a non-zero exit code 127.; 212)
+[2023-11-06T16:09:12.922+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-06T16:09:13.222+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
